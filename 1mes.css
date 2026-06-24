@@ -1,0 +1,487 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  min-height: 100vh;
+  color: #4a1c2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.contenedor {
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 35px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: aparecer 1.2s ease;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #d6336c;
+  margin-bottom: 15px;
+}
+
+.frase {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.razones h3 {
+  font-size: 1.2rem;
+  color: #2b0f1d;
+  margin-bottom: 25px;
+  line-height: 1.4;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards {
+  margin-top: 15px;
+}
+
+.tarjeta {
+  background: #fff0f5;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  border: 2px solid #ffb3c6;
+}
+
+.tarjeta h2,
+.razones h2,
+.contador h2,
+.calendario-seccion h2,
+.recuerdos h2 {
+  color: #c9184a;
+  margin-bottom: 15px;
+}
+
+.tarjeta p {
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* Calendario */
+
+.calendario-seccion {
+  background: #ffe5ec;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.fecha-especial {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d6336c;
+  margin-bottom: 20px;
+}
+
+.calendario {
+  max-width: 380px;
+  margin: auto;
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(214, 51, 108, 0.2);
+}
+
+.calendario-header {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #d6336c;
+  margin-bottom: 15px;
+}
+
+.dias-semana,
+.dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.dias-semana span {
+  font-weight: bold;
+  color: #a4133c;
+  font-size: 0.9rem;
+}
+
+.dia {
+  padding: 10px;
+  border-radius: 50%;
+  background: #fff0f5;
+  font-weight: bold;
+}
+
+.dia.vacio {
+  background: transparent;
+}
+
+.dia.especial {
+  background: #d6336c;
+  color: white;
+  box-shadow: 0 0 15px rgba(214, 51, 108, 0.7);
+  animation: latido 1.5s infinite;
+}
+
+/* Recuerdos */
+
+.recuerdos {
+  margin-bottom: 30px;
+}
+
+.texto-recuerdos {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.foto-card {
+  background: #fff0f5;
+  padding: 15px;
+  border-radius: 20px;
+  border: 2px solid #ffb3c6;
+}
+
+.foto-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.foto-card p {
+  margin-top: 12px;
+  font-weight: bold;
+  color: #7b2c44;
+}
+
+.contenedor-foto-secreta {
+  position: relative;
+  cursor: pointer;
+}
+
+.foto-secreta img {
+  filter: blur(8px);
+  transition: 0.5s;
+}
+
+.foto-secreta.revelada img {
+  filter: blur(0);
+}
+
+.texto-click {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  background: rgba(214, 51, 108, 0.85);
+  color: white;
+  padding: 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.foto-secreta.revelada .texto-click {
+  display: none;
+}
+
+.mensaje-foto {
+  background: #ffe5ec;
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+/* Cards */
+
+.cards {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #ffccd5;
+  padding: 20px;
+  border-radius: 18px;
+  width: 220px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #ffb3c1;
+}
+
+.contador {
+  margin-bottom: 25px;
+}
+
+#dias {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #d6336c;
+}
+
+button {
+  background: #d6336c;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #a4133c;
+  transform: scale(1.05);
+}
+
+.mensaje {
+  margin-top: 25px;
+  background: #ffe5ec;
+  padding: 25px;
+  border-radius: 20px;
+  animation: aparecer 0.8s ease;
+}
+
+.oculto {
+  display: none;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes latido {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .contenedor {
+    padding: 25px;
+  }
+
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+
+  .foto-card img {
+    height: 250px;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+/* ========================= */
+/* DISEÑO PARA CELULAR */
+/* Referencia: iPhone 12 Pro */
+/* ========================= */
+
+@media (max-width: 430px) {
+
+  body {
+    padding: 12px;
+    align-items: flex-start;
+    overflow-x: hidden;
+  }
+
+  .contenedor {
+    width: 100%;
+    max-width: 390px;
+    padding: 22px 16px;
+    border-radius: 20px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  .frase {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .tarjeta {
+    padding: 18px;
+    margin-bottom: 25px;
+  }
+
+  .tarjeta h2,
+  .calendario-seccion h2,
+  .recuerdos h2,
+  .razones h2 {
+    font-size: 1.5rem;
+  }
+
+  .tarjeta p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Calendario */
+
+  .calendario-seccion {
+    padding: 18px 12px;
+  }
+
+  .fecha-especial {
+    font-size: 1.1rem;
+  }
+
+  .dias-juntos {
+    font-size: 1.15rem;
+  }
+
+  .calendario {
+    width: 100%;
+    padding: 14px 10px;
+  }
+
+  .calendario-header {
+    font-size: 1.2rem;
+  }
+
+  .dias-semana,
+  .dias {
+    gap: 5px;
+  }
+
+  .dias-semana span {
+    font-size: 0.72rem;
+  }
+
+  .dia {
+    padding: 7px 0;
+    font-size: 0.8rem;
+    border-radius: 12px;
+  }
+
+  .dia.especial {
+    font-size: 0.78rem;
+    border-radius: 12px;
+  }
+
+  /* Recuerdos juntos */
+
+  .recuerdos {
+    margin-bottom: 25px;
+  }
+
+  .texto-recuerdos {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .galeria {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .foto-card {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .foto-card img {
+    height: 260px;
+    border-radius: 14px;
+  }
+
+  .foto-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .texto-click {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .mensaje-foto {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* 3 cositas que amo de ti */
+
+  .razones h3 {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    padding: 0 5px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 18px 12px;
+    font-size: 1rem;
+    border-radius: 18px;
+  }
+
+  /* Botón sorpresa */
+
+  button {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+
+  .mensaje {
+    padding: 18px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
